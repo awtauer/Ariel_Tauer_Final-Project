@@ -1,4 +1,5 @@
 class SafetyHazardApplicationsController < ApplicationController
+
   def index
     @safety_hazard_applications = SafetyHazardApplication.all
   end
@@ -20,7 +21,7 @@ class SafetyHazardApplicationsController < ApplicationController
     @safety_hazard_application.school_address = params[:school_address]
     @safety_hazard_application.hazard_location = params[:hazard_location]
     @safety_hazard_application.hazard_type = params[:hazard_type]
-    @safety_hazard_application.admin_id = params[:admin_id]
+    @safety_hazard_application.user_id = params[:user_id]
 
     if @safety_hazard_application.save
       redirect_to "/safety_hazard_applications", :notice => "Safety hazard application created successfully."
@@ -43,7 +44,7 @@ class SafetyHazardApplicationsController < ApplicationController
     @safety_hazard_application.school_address = params[:school_address]
     @safety_hazard_application.hazard_location = params[:hazard_location]
     @safety_hazard_application.hazard_type = params[:hazard_type]
-    @safety_hazard_application.admin_id = params[:admin_id]
+    @safety_hazard_application.user_id = current_user.id
 
     if @safety_hazard_application.save
       redirect_to "/safety_hazard_applications", :notice => "Safety hazard application updated successfully."

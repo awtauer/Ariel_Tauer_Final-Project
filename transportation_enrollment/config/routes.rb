@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :admins
+  devise_for :users
+  
   root 'transportation_enrollments#new'
 
   get('/transportation_enrollment', { :controller => 'transportation_enrollments', :action => 'new' })

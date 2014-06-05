@@ -1,4 +1,5 @@
 class SpecialEducationApplicationsController < ApplicationController
+
   def index
     @special_education_applications = SpecialEducationApplication.all
   end
@@ -17,7 +18,7 @@ class SpecialEducationApplicationsController < ApplicationController
     @special_education_application.cps_id = params[:cps_id]
     @special_education_application.school_of_attendance = params[:school_of_attendance]
     @special_education_application.daytime = params[:daytime]
-    @special_education_application.admin_id = params[:admin_id]
+    @special_education_application.user_id = params[:user_id]
 
     if @special_education_application.save
       redirect_to "/special_education_applications", :notice => "Special education application created successfully."
@@ -37,7 +38,7 @@ class SpecialEducationApplicationsController < ApplicationController
     @special_education_application.cps_id = params[:cps_id]
     @special_education_application.school_of_attendance = params[:school_of_attendance]
     @special_education_application.daytime = params[:daytime]
-    @special_education_application.admin_id = params[:admin_id]
+    @special_education_application.user_id = current_user.id
 
     if @special_education_application.save
       redirect_to "/special_education_applications", :notice => "Special education application updated successfully."

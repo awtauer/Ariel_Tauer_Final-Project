@@ -1,4 +1,5 @@
 class ParkProgramApplicationsController < ApplicationController
+  
   def index
     @park_program_applications = ParkProgramApplication.all
   end
@@ -18,7 +19,7 @@ class ParkProgramApplicationsController < ApplicationController
     @park_program_application.school_of_attendance = params[:school_of_attendance]
     @park_program_application.park_name = params[:park_name]
     @park_program_application.park_address = params[:park_address]
-    @park_program_application.admin_id = params[:admin_id]
+    @park_program_application.user_id = params[:user_id]
 
     if @park_program_application.save
       redirect_to "/park_program_applications", :notice => "Park program application created successfully."
@@ -39,7 +40,7 @@ class ParkProgramApplicationsController < ApplicationController
     @park_program_application.school_of_attendance = params[:school_of_attendance]
     @park_program_application.park_name = params[:park_name]
     @park_program_application.park_address = params[:park_address]
-    @park_program_application.admin_id = params[:admin_id]
+    @park_program_application.user_id = current_user.id
 
     if @park_program_application.save
       redirect_to "/park_program_applications", :notice => "Park program application updated successfully."

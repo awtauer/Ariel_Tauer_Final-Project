@@ -1,4 +1,5 @@
 class SiblingApplicationsController < ApplicationController
+
   def index
     @sibling_applications = SiblingApplication.all
   end
@@ -20,7 +21,7 @@ class SiblingApplicationsController < ApplicationController
     @sibling_application.eligible_cps_id = params[:eligible_cps_id]
     @sibling_application.relationship = params[:relationship]
     @sibling_application.home_address = params[:home_address]
-    @sibling_application.admin_id = params[:admin_id]
+    @sibling_application.user_id = params[:user_id]
 
     if @sibling_application.save
       redirect_to "/sibling_applications", :notice => "Sibling application created successfully."
@@ -43,7 +44,7 @@ class SiblingApplicationsController < ApplicationController
     @sibling_application.eligible_cps_id = params[:eligible_cps_id]
     @sibling_application.relationship = params[:relationship]
     @sibling_application.home_address = params[:home_address]
-    @sibling_application.admin_id = params[:admin_id]
+    @sibling_application.user_id = current_user.id
 
     if @sibling_application.save
       redirect_to "/sibling_applications", :notice => "Sibling application updated successfully."

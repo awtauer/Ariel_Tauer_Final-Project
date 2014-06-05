@@ -8,6 +8,7 @@ class CreateSiblingApplications < ActiveRecord::Migration
       t.integer :eligible_cps_id
       t.string :relationship
       t.string :home_address
+      t.integer :user_id
 
       t.timestamps
 
