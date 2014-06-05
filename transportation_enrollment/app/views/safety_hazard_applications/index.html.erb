@@ -1,0 +1,54 @@
+<div class="page-header">
+  <h1>Safety hazard applications</h1>
+</div>
+
+<p><a href="/safety_hazard_applications/new" class="btn btn-primary">Add a New Safety Hazard Application</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Student name</th>
+      <th>Cps</th>
+      <th>Home address</th>
+      <th>School of attendance</th>
+      <th>School address</th>
+      <th>Hazard location</th>
+      <th>Hazard type</th>
+      <th>Admin</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @safety_hazard_applications.each do |safety_hazard_application| %>
+      <tr>
+        <td><%= safety_hazard_application.student_name %></td>
+        <td><%= safety_hazard_application.cps_id %></td>
+        <td><%= safety_hazard_application.home_address %></td>
+        <td><%= safety_hazard_application.school_of_attendance %></td>
+        <td><%= safety_hazard_application.school_address %></td>
+        <td><%= safety_hazard_application.hazard_location %></td>
+        <td><%= safety_hazard_application.hazard_type %></td>
+        <td><%= safety_hazard_application.admin_id %></td>
+        <td>
+          <a href="/safety_hazard_applications/<%= safety_hazard_application.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/safety_hazard_applications/<%= safety_hazard_application.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_safety_hazard_application/<%= safety_hazard_application.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

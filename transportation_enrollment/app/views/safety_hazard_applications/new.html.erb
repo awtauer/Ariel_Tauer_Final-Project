@@ -1,0 +1,101 @@
+<div class="page-header">
+  <h1>Add Safety Hazard Application</h1>
+</div>
+
+<% if @safety_hazard_application.errors.any? %>
+  <% @safety_hazard_application.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+
+<form action="/create_safety_hazard_application" class="form-horizontal">
+  <!-- Label and input for student_name -->
+  <div class="form-group">
+    <label for="student_name" class="col-sm-2 control-label">
+      Student name
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="student_name" name="student_name" placeholder="Student name" class="form-control" value="<%= @safety_hazard_application.student_name %>">
+    </div>
+  </div>
+
+  <!-- Label and input for cps_id -->
+  <div class="form-group">
+    <label for="cps_id" class="col-sm-2 control-label">
+      Cps
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="cps_id" name="cps_id" placeholder="Cps" class="form-control" value="<%= @safety_hazard_application.cps_id %>">
+    </div>
+  </div>
+
+  <!-- Label and input for home_address -->
+  <div class="form-group">
+    <label for="home_address" class="col-sm-2 control-label">
+      Home address
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="home_address" name="home_address" placeholder="Home address" class="form-control" value="<%= @safety_hazard_application.home_address %>">
+    </div>
+  </div>
+
+  <!-- Label and input for school_of_attendance -->
+  <div class="form-group">
+    <label for="school_of_attendance" class="col-sm-2 control-label">
+      School of attendance
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="school_of_attendance" name="school_of_attendance" placeholder="School of attendance" class="form-control" value="<%= @safety_hazard_application.school_of_attendance %>">
+    </div>
+  </div>
+
+  <!-- Label and input for school_address -->
+  <div class="form-group">
+    <label for="school_address" class="col-sm-2 control-label">
+      School address
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="school_address" name="school_address" placeholder="School address" class="form-control" value="<%= @safety_hazard_application.school_address %>">
+    </div>
+  </div>
+
+  <!-- Label and input for hazard_location -->
+  <div class="form-group">
+    <label for="hazard_location" class="col-sm-2 control-label">
+      Hazard location
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="hazard_location" name="hazard_location" placeholder="Hazard location" class="form-control" value="<%= @safety_hazard_application.hazard_location %>">
+    </div>
+  </div>
+
+  <!-- Label and input for hazard_type -->
+  <div class="form-group">
+    <label for="hazard_type" class="col-sm-2 control-label">
+      Hazard type
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="hazard_type" name="hazard_type" placeholder="Hazard type" class="form-control" value="<%= @safety_hazard_application.hazard_type %>">
+    </div>
+  </div>
+
+  <!-- Label and input for admin_id -->
+  <div class="form-group">
+    <label for="admin_id" class="col-sm-2 control-label">
+      Admin
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="admin_id" name="admin_id" placeholder="Admin" class="form-control" value="<%= @safety_hazard_application.admin_id %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Create Safety Hazard Application" class="btn btn-primary">
+    </div>
+  </div>
+</form>

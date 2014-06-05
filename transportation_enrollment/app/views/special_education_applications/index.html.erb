@@ -1,0 +1,48 @@
+<div class="page-header">
+  <h1>Special education applications</h1>
+</div>
+
+<p><a href="/special_education_applications/new" class="btn btn-primary">Add a New Special Education Application</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Student name</th>
+      <th>Cps</th>
+      <th>School of attendance</th>
+      <th>Daytime</th>
+      <th>Admin</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @special_education_applications.each do |special_education_application| %>
+      <tr>
+        <td><%= special_education_application.student_name %></td>
+        <td><%= special_education_application.cps_id %></td>
+        <td><%= special_education_application.school_of_attendance %></td>
+        <td><%= special_education_application.daytime %></td>
+        <td><%= special_education_application.admin_id %></td>
+        <td>
+          <a href="/special_education_applications/<%= special_education_application.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/special_education_applications/<%= special_education_application.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_special_education_application/<%= special_education_application.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

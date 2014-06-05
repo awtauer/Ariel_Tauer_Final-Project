@@ -1,0 +1,50 @@
+<div class="page-header">
+  <h1>Park program applications</h1>
+</div>
+
+<p><a href="/park_program_applications/new" class="btn btn-primary">Add a New Park Program Application</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Student name</th>
+      <th>Cps</th>
+      <th>School of attendance</th>
+      <th>Park name</th>
+      <th>Park address</th>
+      <th>Admin</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @park_program_applications.each do |park_program_application| %>
+      <tr>
+        <td><%= park_program_application.student_name %></td>
+        <td><%= park_program_application.cps_id %></td>
+        <td><%= park_program_application.school_of_attendance %></td>
+        <td><%= park_program_application.park_name %></td>
+        <td><%= park_program_application.park_address %></td>
+        <td><%= park_program_application.admin_id %></td>
+        <td>
+          <a href="/park_program_applications/<%= park_program_application.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/park_program_applications/<%= park_program_application.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_park_program_application/<%= park_program_application.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

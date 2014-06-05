@@ -1,0 +1,90 @@
+<div class="page-header">
+  <h1>Edit Sibling Application #<%= @sibling_application.id %></h1>
+</div>
+
+<% if @sibling_application.errors.any? %>
+  <% @sibling_application.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<form action="/update_sibling_application/<%= @sibling_application.id %>" class="form-horizontal">
+  <!-- Label and input for school_of_attendance -->
+  <div class="form-group">
+    <label for="school_of_attendance" class="col-sm-2 control-label">
+      School of attendance
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="school_of_attendance" name="school_of_attendance" placeholder="School of attendance" class="form-control" value="<%= @sibling_application.school_of_attendance %>">
+    </div>
+  </div>
+
+  <!-- Label and input for ineligible_student -->
+  <div class="form-group">
+    <label for="ineligible_student" class="col-sm-2 control-label">
+      Ineligible student
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="ineligible_student" name="ineligible_student" placeholder="Ineligible student" class="form-control" value="<%= @sibling_application.ineligible_student %>">
+    </div>
+  </div>
+
+  <!-- Label and input for ineligible_cps_id -->
+  <div class="form-group">
+    <label for="ineligible_cps_id" class="col-sm-2 control-label">
+      Ineligible cps
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="ineligible_cps_id" name="ineligible_cps_id" placeholder="Ineligible cps" class="form-control" value="<%= @sibling_application.ineligible_cps_id %>">
+    </div>
+  </div>
+
+  <!-- Label and input for eligible_student -->
+  <div class="form-group">
+    <label for="eligible_student" class="col-sm-2 control-label">
+      Eligible student
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="eligible_student" name="eligible_student" placeholder="Eligible student" class="form-control" value="<%= @sibling_application.eligible_student %>">
+    </div>
+  </div>
+
+  <!-- Label and input for eligible_cps_id -->
+  <div class="form-group">
+    <label for="eligible_cps_id" class="col-sm-2 control-label">
+      Eligible cps
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="eligible_cps_id" name="eligible_cps_id" placeholder="Eligible cps" class="form-control" value="<%= @sibling_application.eligible_cps_id %>">
+    </div>
+  </div>
+
+  <!-- Label and input for relationship -->
+  <div class="form-group">
+    <label for="relationship" class="col-sm-2 control-label">
+      Relationship
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="relationship" name="relationship" placeholder="Relationship" class="form-control" value="<%= @sibling_application.relationship %>">
+    </div>
+  </div>
+
+  <!-- Label and input for home_address -->
+  <div class="form-group">
+    <label for="home_address" class="col-sm-2 control-label">
+      Home address
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="home_address" name="home_address" placeholder="Home address" class="form-control" value="<%= @sibling_application.home_address %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Update Sibling Application" class="btn btn-primary">
+    </div>
+  </div>
+</form>

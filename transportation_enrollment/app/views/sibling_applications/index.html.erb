@@ -1,0 +1,52 @@
+<div class="page-header">
+  <h1>Sibling applications</h1>
+</div>
+
+<p><a href="/sibling_applications/new" class="btn btn-primary">Add a New Sibling Application</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>School of attendance</th>
+      <th>Ineligible student</th>
+      <th>Ineligible cps</th>
+      <th>Eligible student</th>
+      <th>Eligible cps</th>
+      <th>Relationship</th>
+      <th>Home address</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sibling_applications.each do |sibling_application| %>
+      <tr>
+        <td><%= sibling_application.school_of_attendance %></td>
+        <td><%= sibling_application.ineligible_student %></td>
+        <td><%= sibling_application.ineligible_cps_id %></td>
+        <td><%= sibling_application.eligible_student %></td>
+        <td><%= sibling_application.eligible_cps_id %></td>
+        <td><%= sibling_application.relationship %></td>
+        <td><%= sibling_application.home_address %></td>
+        <td>
+          <a href="/sibling_applications/<%= sibling_application.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/sibling_applications/<%= sibling_application.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_sibling_application/<%= sibling_application.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

@@ -1,0 +1,81 @@
+<div class="page-header">
+  <h1>Add Park Program Application</h1>
+</div>
+
+<% if @park_program_application.errors.any? %>
+  <% @park_program_application.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+
+<form action="/create_park_program_application" class="form-horizontal">
+  <!-- Label and input for student_name -->
+  <div class="form-group">
+    <label for="student_name" class="col-sm-2 control-label">
+      Student name
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="student_name" name="student_name" placeholder="Student name" class="form-control" value="<%= @park_program_application.student_name %>">
+    </div>
+  </div>
+
+  <!-- Label and input for cps_id -->
+  <div class="form-group">
+    <label for="cps_id" class="col-sm-2 control-label">
+      Cps
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="cps_id" name="cps_id" placeholder="Cps" class="form-control" value="<%= @park_program_application.cps_id %>">
+    </div>
+  </div>
+
+  <!-- Label and input for school_of_attendance -->
+  <div class="form-group">
+    <label for="school_of_attendance" class="col-sm-2 control-label">
+      School of attendance
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="school_of_attendance" name="school_of_attendance" placeholder="School of attendance" class="form-control" value="<%= @park_program_application.school_of_attendance %>">
+    </div>
+  </div>
+
+  <!-- Label and input for park_name -->
+  <div class="form-group">
+    <label for="park_name" class="col-sm-2 control-label">
+      Park name
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="park_name" name="park_name" placeholder="Park name" class="form-control" value="<%= @park_program_application.park_name %>">
+    </div>
+  </div>
+
+  <!-- Label and input for park_address -->
+  <div class="form-group">
+    <label for="park_address" class="col-sm-2 control-label">
+      Park address
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="park_address" name="park_address" placeholder="Park address" class="form-control" value="<%= @park_program_application.park_address %>">
+    </div>
+  </div>
+
+  <!-- Label and input for admin_id -->
+  <div class="form-group">
+    <label for="admin_id" class="col-sm-2 control-label">
+      Admin
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="admin_id" name="admin_id" placeholder="Admin" class="form-control" value="<%= @park_program_application.admin_id %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Create Park Program Application" class="btn btn-primary">
+    </div>
+  </div>
+</form>
